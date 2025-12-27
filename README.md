@@ -1,10 +1,12 @@
 # group-task4-Hyperspectral
 
+**BUAA 2025秋季15系机器学习课程大作业**
+
 利用覆盖 **400–1000 nm** 的高光谱数据（每像素 **32 个波段**）进行精细地物分类：给定场景中若干像素的谱向量（`band_1 ... band_32`），预测其土地覆盖类别（`label`）。
 
 本仓库实现了一条偏“工程落地”的训练流水线：  
 - **大规模 CSV → NumPy memmap**（可流式处理，避免爆内存）  
-- **Conv + Transformer 自编码器（AE）**学习光谱表征（可扩展到半监督）  
+- **Conv + Transformer 自编码器（AE）** 学习光谱表征（可扩展到半监督）  
 - **AE + MLP 分类头**进行像素级分类（支持类别不平衡加权）  
 - 输出 `predictions.csv`（`id,pred_label`）
 
